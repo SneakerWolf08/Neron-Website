@@ -1,0 +1,598 @@
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 0;
+  /* Első háttérkép: alapértelmezett háttérkép */
+  background-image: url('bg_tukor.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Háttérkép rögzítése a képernyőhöz */
+
+  /* Második háttérkép: a görgetéshez kapcsolódó háttérkép */
+  background-image: linear-gradient(#00000062, #00000062), url('kepek/bg.jpg');
+}
+
+/* A linear-gradient() függvény által létrehozott áttetsző fehér háttér teszi lehetővé, hogy a második háttérkép megjelenjen az alap hátteren. */
+
+
+.bold-text {
+  font-weight: bold;
+}
+
+
+.navbar {
+  background-color: #19001f5d;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 300;
+  z-index: 1000; /* Biztosítja, hogy a navbar a többi elem fölé kerüljön */
+  align-items: center;
+  height: 80px; /* Navbar magassága */
+  width: 100%; /* Teljes szélesség elfoglalása */
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-left button {
+  background-color: #b100dd;
+  color: white;
+  border: none;
+  padding: 13px 20px; /* Hosszabbítottuk a gombot */
+  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 5px; /* Sarkok lekerekítése */
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Georgia font alkalmazása */
+  font-weight: bold;
+}
+
+
+.navbar-left button:hover {
+  background-color: #7b0199;
+  
+}
+
+.navbar-left button {
+  margin-right: 8px; /* A gombok közötti kis térköz */
+}
+
+.navbar-left .home-button {
+  margin-left: 240px; /* Hozzáadott jobb margin csak a Főoldal gombhoz */
+}
+
+.navbar-right button {
+  background-color: #b100dd;
+  color: white;
+  border: none;
+  padding: 13px 30px; /* Hosszabbítottuk a gombot */
+  cursor: pointer;
+  margin-right: 205px;
+  border-radius: 5px; /* Sarkok lekerekítése */
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Georgia font alkalmazása */
+}
+
+.navbar-right button:hover {
+  background-color: #7b0199;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #7b0199;
+}
+
+.content {
+  padding: 20px;
+}
+
+
+.logo {
+  display: block;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  top: 220;
+  height: 505px;
+  margin: 0px auto; /* Középre igazítás és margó felül és alul */
+  margin-bottom: 110px;
+}
+  
+
+.welcome-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  top: -20px;
+  text-align: center; /* Szöveg középre igazítása */
+  white-space: nowrap; /* A szöveg ne tördelődjön */
+  overflow: hidden; /* A túlcsorduló részek elrejtése */
+  animation: neo-glow 1.5s infinite alternate;
+  animation: typing 8s steps(24, end), blink-caret 8s step-end infinite; /* Az animációk hozzáadása */
+  z-index: 1; /* Biztosítja, hogy a szöveg előtérben legyen */
+}
+
+.rules button:hover {
+  background-color: #7b0199;
+}
+
+.apply button:hover {
+  background-color: #7b0199;
+}
+
+
+
+@keyframes neon-glow {
+  from {
+    box-shadow: 0 0 10px #cc00ff,
+                0 0 20px #d400ff,
+                0 0 30px #ff00dd,
+                0 0 40px #ff00aa,
+                0 0 70px #b700ff,
+                0 0 80px #cc00ff,
+                0 0 100px #ff00ea,
+                0 0 150px #cc00ff;
+  }
+  to {
+    box-shadow: none;
+  }
+}
+
+/* Új elem hozzáadása az ikonokhoz */
+.navbar-left button i,
+.navbar-right button i {
+  margin-right: 5px; /* Térköz az ikon és a szöveg között */
+}
+
+.gray-rectangle {
+  width: 1000px; /* Méret beállítása */
+  height: 100px; /* Méret beállítása */
+  background-color: #1f1f1fea; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 740px; /* Felső margó beállítása */
+  left: 50%; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 8px; /* Sarkok lekerekítése */
+  z-index: -1; /* Biztosítja, hogy a navbar alatt, de más elemek fölött legyen */
+  animation: pulse 2s infinite alternate; /* Animáció hozzáadása */
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 2px #cc00ff,
+                0 0 12px #d400ff,
+                0 0 18px #ff00dd,
+                0 0 20px #ff00aa,
+                0 0 25px #b700ff,
+                0 0 30px #cc00ff,
+                0 0 35px #ff00ea,
+                0 0 40px #cc00ff;
+  }
+  to {
+    box-shadow: none;
+  }
+
+}
+  
+
+.server {
+  width: 70px; /* Méret beállítása */
+  height: 80px; /* Méret beállítása */
+  background-color: #33333300; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 750px; /* Felső margó beállítása */
+  left: 520px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 6px; /* Sarkok lekerekítése */
+}
+
+
+.serverbar {
+  width: 600px; /* Méret beállítása */
+  height: 17px; /* Méret beállítása */
+  background-color: #777777ea; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 795px; /* Felső margó beállítása */
+  left: 980px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 6px; /* Sarkok lekerekítése */
+}
+
+.status {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  width: 30px;
+  height: 30px;
+  left: 1290px;
+  top: -20px;
+}
+
+.server-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 40px; 
+}
+
+
+
+.jatekos {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  left: -333px;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 28px; /* Mozgatás lefelé 300 pixellel */
+}
+
+.serverbarfill {
+  width: 120px; /* Méret beállítása */
+  height: 17px; /* Méret beállítása */
+  background-color: #8800a3ea; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 795px; /* Felső margó beállítása */
+  left: 740px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 6px; /* Sarkok lekerekítése */
+}
+
+.pcount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 145px; /* Mozgatás lefelé 300 pixellel */
+}
+
+.wcbar {
+  width: 650px; /* Méret beállítása */
+  height: 60px; /* Méret beállítása */
+  background-color: #1f1f1fc9; /* Szín beállítása */
+  position: absolute; /*Abszolút pozíció beállítása */
+  top: 554px; /* Felső margó beállítása */
+  left: 50%; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 8px; /* Sarkok lekerekítése */
+  z-index: -1; /*Biztosítja, hogy a navbar alatt, de más elemek fölött legyen */
+}
+
+
+/*custom scroll bar*/
+
+::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track{
+  background: #0C0202 ;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient( #100014, #300050, #ff00dd, #300050, #100014);
+  border-radius: 10px;
+}
+
+.kocka {
+  width: 1000px; /* Méret beállítása */
+  height: 400px; /* Méret beállítása */
+  background-color: #1f1f1f96; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 1060px; /* Felső margó beállítása */
+  right: -60px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 8px; /* Sarkok lekerekítése */
+  z-index: -1; /* Biztosítja, hogy a navbar alatt, de más elemek fölött legyen */
+  animation: pulse 2s infinite alternate; /* Animáció hozzáadása */
+}
+
+.karakter {
+  width: 400px; /* Méret beállítása */
+  height: 700px; /* Méret beállítása */
+  background-color: #33333300; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 870px; /* Felső margó beállítása */
+  left: 500px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 6px; /* Sarkok lekerekítése */
+}
+
+.text1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 60px; 
+}
+
+.text2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+}
+
+.text3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.text4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.text5 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.text6 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.text7 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.text8 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 120px; 
+  left: 65px;
+}
+
+.rules button {
+  background-color: #b100dd;
+  color: white;
+  border: none;
+  position: relative;
+  top: 140px;
+  left: 900px;
+  padding: 13px 30px; /* Hosszabbítottuk a gombot */
+  cursor: pointer;
+  border-radius: 5px; /* Sarkok lekerekítése */
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Georgia font alkalmazása */
+  z-index: 199;
+
+}
+
+.kocka2 {
+  width: 800px; /* Méret beállítása */
+  height: 360px; /* Méret beállítása */
+  background-color: #1f1f1f96; /* Szín beállítása */
+  position: absolute; /* Abszolút pozíció beállítása */
+  top: 1760px; /* Felső margó beállítása */
+  right: 480px; /* Bal margó középre igazítása */
+  transform: translateX(-50%); /* Középre igazítás vízszintesen */
+  border-radius: 8px; /* Sarkok lekerekítése */
+  z-index: -1; /* Biztosítja, hogy a navbar alatt, de más elemek fölött legyen */
+  animation: pulse 2s infinite alternate; /* Animáció hozzáadása */
+}
+
+.jelentkezes {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 370px; 
+  right: 300px;
+}
+
+.szoveg1 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 450px; 
+  right: 320px;
+}
+
+
+.szoveg2 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 490px; 
+  right: 399px;
+}
+
+.szoveg3 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 490px; 
+  right: 430px;
+}
+
+.szoveg4 {
+  font-size: 17.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 490px; 
+  right: 445px;
+}
+
+.szoveg5 {
+  font-size: 15.5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+  position: relative; /* Szükséges, hogy a top tulajdonságot használni lehessen */
+  top: 520px; 
+  right: 335px;
+}
+
+.apply button {
+  background-color: #b100dd;
+  color: white;
+  border: none;
+  position: relative;
+  top: 530px;
+  left: 550px;
+  padding: 13px 30px; /* Hosszabbítottuk a gombot */
+  cursor: pointer;
+  border-radius: 5px; /* Sarkok lekerekítése */
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Georgia font alkalmazása */
+  z-index: 199;
+}
+
+/* Alap stílusok a footerhez */
+footer {
+  background-color: #00000034; /* háttérszín */
+  padding: 20px; /* belső margó */
+  text-align: center; /* szöveg igazítása középre */
+  position: fixed; /* rögzített pozíció az oldal alján */
+  width: 100%; /* teljes szélesség */
+  height: 60px;
+  top: 4000px;
+  left: 0px; /* bal oldalon */
+  position: absolute;
+  animation: neon 2s infinite alternate; /* Animáció hozzáadása */
+}
+
+/* Stílus a linkekhez a footerben */
+footer a {
+  color: #333; /* alap szín */
+  text-decoration: none; /* aláhúzás eltávolítása */
+  margin: 0 10px; /* margó a linkek között */
+  left: 100px;
+}
+
+.neon {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  position: relative;
+  top: 200px;
+  background-color: #ae00ffa4;
+  animation: neon 2s infinite alternate;
+  bottom: 78px; /* Ez helyezi el a csíkot a navbar alatt */
+  z-index: 1; /* Biztosítja, hogy a navbar alatt, de más elemek fölött legyen */
+}
+
+@keyframes neon {
+  from {
+    box-shadow: 0 0 10px #cc00ff,
+                0 0 20px #d400ff,
+                0 0 30px #ff00dd,
+                0 0 40px #ff00aa,
+                0 0 70px #b700ff,
+                0 0 80px #cc00ff,
+                0 0 100px #ff00ea,
+                0 0 150px #cc00ff;
+  }
+  to {
+    box-shadow: none;
+  }
+}
